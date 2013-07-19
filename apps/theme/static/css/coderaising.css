@@ -4,13 +4,34 @@
 .hero-unit h1 {
     font-size: 50px;
 }
-pre.reset-bg {
-	background-color: inherit;
-	border: inherit;
-	font: inherit;
+.whitespace {
+    white-space: pre-wrap;
 }
 #navbar-img {
     box-shadow: none;
     position: relative;
     margin: -14px 10px -10px;
+}
+ul.tech-list {
+    margin: 10px 5px;
+    display: block;
+    background: #eee;
+    padding: 8px;
+}
+ul.tech-list li:first-child {
+    font-weight: bold;
+}
+ul.tech-list > li {
+    padding: 0px 2px;
+}
+ul.tech-list .badge {
+    line-height: 13px;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 11px;
+}
+.project-list > li.project {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
 }

@@ -1,0 +1,10 @@
+{# usage: {% include "projects/tech_list.html" with tech_list=project.technologies.all %} #}
+
+<ul class="inline tech-list">
+  <li>Technologies:</li>
+  {% for tech in tech_list %}
+    <li><a href="{% url "project_index" %}?tech={{tech}}" class="badge badge-info">
+      {{tech}}
+    </a></li>
+  {% endfor %}
+</ul>
