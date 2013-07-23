@@ -13,7 +13,7 @@
     <link href="{{ STATIC_URL }}wiki/bootstrap/css/wiki-bootstrap-responsive.min.css" rel="stylesheet"> -->
 {% endblock %}
 
-{% block canvas %}
+{% block content %}
     {% block wiki_body %}
     
     {% comment %}
@@ -101,7 +101,7 @@
     </div>
 
     {% endblock %}
-{% endblock canvas %}
+{% endblock content %}
 
 {% block extra_js %}
   <script src="{{ STATIC_URL }}wiki/js/core.js"></script>
