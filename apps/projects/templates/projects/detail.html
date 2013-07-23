@@ -38,32 +38,25 @@
 
 {% block content %}
 <div class="span7 middle">
+  {% include "projects/tech_list.html" with tech_list=project.technologies.all %}
+    <div class="whitespace">
+        {{project.description}}
+    </div>
 
-<pre class="reset-bg">
-    {{project.description}}
-</pre>
-<br />
-
-    <h4>Technologies Used:</h4>
-    <p>
-      {% for tag in project.technologies.all %}
-        <a href="{% url "project_index" %}?tech={{tag}}" class="label label-info">{{tag}}</a>
-      {% endfor %}
-    <p>
-    <br />
-
-    <h4>Project Members:</h4>
     <dl>
+      {% if project.mentors.all %}
         <dt>Mentor(s)</dt>
         <dd>
             <ul class="unstyled">
                 {% for mentor in project.mentors.all %}
-                <li class="unstyled"> <a href="{% url "userprofile_detail" mentor.pk %}" > {{mentor.user}}</a></li>
+                <li><a href="{% url "userprofile_detail" mentor.pk %}" > {{mentor.user}}</a></li>
                 {% endfor %}
             </ul>
         </dd>
         <br />
+      {% endif %}
 
+      {% if project.members.all %}
         <dt>Mentees</dt>
         <dd>
             <ul class="unstyled">
@@ -72,9 +65,11 @@
                 {% endfor %}
             </ul>
         </dd>
-    </ul>
+      {% endif %}
+    </dl>
 
     <br />
+
 </div>
 
 {% endblock %}
